@@ -1,0 +1,17 @@
+{
+	"server": {
+		"port":80
+	},
+	"database":{
+		"username": "",
+		"password" : "",
+		"database" : "",
+		"uri": ""
+	},
+	"hapi": {
+		"connection" : {
+			"host" : "127.0.0.1",
+			"port" : 8000
+		}
+	}
+}

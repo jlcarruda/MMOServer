@@ -1,0 +1,29 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'C:\\Program Files (x86)\\nodejs\\node.exe',
+1 verbose cli   'C:\\Program Files (x86)\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'install',
+1 verbose cli   'bcrypt',
+1 verbose cli   '--save' ]
+2 info using npm@3.3.12
+3 info using node@v5.1.0
+4 verbose stack Error: Cannot find module 'github-url-from-git'
+4 verbose stack     at Function.Module._resolveFilename (module.js:338:15)
+4 verbose stack     at Function.Module._load (module.js:289:25)
+4 verbose stack     at Module.require (module.js:366:17)
+4 verbose stack     at require (module.js:385:17)
+4 verbose stack     at Object.<anonymous> (C:\Program Files (x86)\nodejs\node_modules\npm\node_modules\read-package-json\node_modules\normalize-package-data\lib\fixer.js:2:22)
+4 verbose stack     at Module._compile (module.js:425:26)
+4 verbose stack     at Object.Module._extensions..js (module.js:432:10)
+4 verbose stack     at Module.load (module.js:356:32)
+4 verbose stack     at Function.Module._load (module.js:313:12)
+4 verbose stack     at Module.require (module.js:366:17)
+5 verbose cwd C:\Users\Lucas\Desktop\Developer\Projetos Node.js\MMOServer\server
+6 error Windows_NT 6.1.7601
+7 error argv "C:\\Program Files (x86)\\nodejs\\node.exe" "C:\\Program Files (x86)\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "install" "bcrypt" "--save"
+8 error node v5.1.0
+9 error npm  v3.3.12
+10 error code MODULE_NOT_FOUND
+11 error Cannot find module 'github-url-from-git'
+12 error If you need help, you may report this error at:
+12 error     <https://github.com/npm/npm/issues>
+13 verbose exit [ 1, true ]
