@@ -3,6 +3,11 @@ global.rootRequire = function (name) {
 	return require(__dirname + '/' + name);
 };
 
+global.rootModulesRequire = function (name) {
+
+	return require(__dirname + '/server/modules/' + name);
+}
+
 var App = require('./server/server.js');
 var Path = require('path');
 

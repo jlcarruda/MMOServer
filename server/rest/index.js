@@ -9,7 +9,7 @@ var Server = new Hapi.Server();
 var Swagger = require('hapi-swagger');
 
 var RoutesLoader = require('./routes');
-var Controllers = rootRequire('server/modules/controllers');
+var Controllers = rootModulesRequire('controllers');
 
 module.exports.init = function () {
 

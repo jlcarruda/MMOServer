@@ -8,7 +8,6 @@ var Swagger = require('hapi-swagger');
 var Colors = require('colors');
 var ServerHandler = {};
 
-
 module.exports.init = function (callback) {
 	/*
 		-> Carregar Banco de DAdos
@@ -18,7 +17,7 @@ module.exports.init = function (callback) {
         -> Carregar Assets
 	*/
 
-    var Models = rootRequire('server/modules/models');
+    var Models = rootModulesRequire('models');
     Models.sync();
 
 	// Load Rest API
