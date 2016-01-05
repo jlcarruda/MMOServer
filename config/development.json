@@ -1,0 +1,20 @@
+{
+	"database":{
+		"username": "root",
+		"password" : "",
+		"database" : "MMO_Server_development",
+		"uri": "mysql://root:@127.0.0.1/MMO_Server_development",
+		"dialect": "mysql"
+	},
+	"database_rest": {
+		"username": "root",
+		"password": "root",
+		"database": "RestDatabase",
+		"dialect": "sqlite",
+	  	"file": "restDb.sqlite",
+		"uri": "sqlite://restDb.sqlite",
+		"options": {
+			"logging": true
+		}
+	}
+}

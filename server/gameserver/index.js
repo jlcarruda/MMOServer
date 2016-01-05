@@ -1,19 +1,25 @@
+
+var Promise = require('bluebird');
 var Config = require('config');
+// var Phaser = require('phaser');
 
-module.exports.start = function (listener, callback) {
+module.exports.start = function (listener) {
 
-	var io = require('socket.io')(listener);
+	return new Promise(function (resolve, reject) {
 
-	io.on("connection", function (socket) {
+		var io = require('socket.io')(listener);
 
-		console.log('Connected.');
+		io.on("connection", function (socket) {
 
-		socket.emit('hey'); // Testing emit to Poker.
-		socket.on('listen', function (data) {
-			console.log(data.message);
+			console.log('Connected.');
+
+			socket.emit('hey'); // Testing emit to Poker.
+			socket.on('listen', function (data) {
+				console.log(data.message);
+			});
+
 		});
 
+		resolve();
 	});
-	
-	callback();
 }

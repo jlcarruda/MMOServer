@@ -1,62 +1,58 @@
-var Config = require('./config/development.json');
+var Config = require('config');
 var Rest = require('./rest/index.js');
-var Hapi = require('hapi');
 var GameServer = require('./gameserver/index.js');
-var server = new Hapi.Server();
-var Vision = require('vision');
-var Inert = require('inert');
 var cls = require('./lib/class.js');
-
+var Async = require('async');
+var Path = require('path');
 var Swagger = require('hapi-swagger');
+var Colors = require('colors');
 var ServerHandler = {};
 
-global.rootServerRequire = function (name) {
-
-    // https://gist.github.com/branneman/8048520
-
-    return require(__dirname + '/' + name);
-};
 
 module.exports.init = function (callback) {
+	/*
+		-> Carregar Banco de DAdos
+		-> Carregar Models
+		-> Carregar REST
+		-> Carregar GameWorld
+        -> Carregar Assets
+	*/
 
-	// Put Rest to start ...
-	server.connection({
-			host: Config.hapi.connection.host,
-			port: Config.hapi.connection.port
-		});
+    var Models = rootRequire('server/modules/models');
+    Models.sync();
 
-	server.register([
-		Inert,
-		Vision,
-		{
-			register: Swagger
-		}
-	], function (err) {
-		
-			
-	});
-	
-	// One handler to rule them all!
-	ServerHandler.server = server;
-	ServerHandler.gamerserver = GameServer;
-	
-	// Start gameserver ...
-	GameServer.start(server.listener, function () {
-		
-		server.start((err) => {
-			if(err) {
+	// Load Rest API
+    Rest.init().then(function (server) {
 
-				callback(err, null);
-				throw err;
-			}
+        this.server = server;
 
-			callback(null, ServerHandler);
-			console.log('Server running at: ', server.info.uri.toLowerCase());
+        // Load Game Server
+        return GameServer.start(this.server.listener).catch(function (error) {
 
-		});
-	})
+            if(error) {
+
+                console.log('Error while starting ' + Colors.magenta('Game Server'));
+                throw error;
+            }
+        });
+
+        console.log("Game Server Started ...");
+    }).then(function () {
+
+        // Load Server
+        this.server.start((err) => {
+            if(err) {
+
+                throw err;
+            }
+
+            console.log('Server running at: ', this.server.info.uri.toLowerCase());
+
+        });
+    }).catch(function (error) {
+
+        if(error) {
+            throw error;
+        }
+    });
 }
-
-exports.attributes = {
-	ServerHandler: ServerHandler
-};
