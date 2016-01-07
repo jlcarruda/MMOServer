@@ -4,7 +4,7 @@ var Config = require('config');
 var Path = require('path');
 var Colors = require('colors');
 
-Sequelize.UUID = Sequelize.CHAR(22).BINARY;
+
 
 module.exports = (function () {
 
