@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "snyk-protect": "snyk protect",
-    "prepublish": "npm run snyk-protect"
+    "prepublish": "npm run snyk-protect",
+    "prepare": "npm run snyk-protect"
   },
   "author": "",
   "license": "ISC",
@@ -20,7 +21,7 @@
     "glob": "^6.0.1",
     "hapi": "^11.1.1",
     "hapi-swagger": "^3.0.0-rc1",
-    "inert": "^3.2.0",
+    "inert": "^4.0.0",
     "lodash": "^3.10.1",
     "mongoose": "^4.3.4",
     "mysql": "^2.10.0",
@@ -28,9 +29,9 @@
     "sequelize": "^3.14.1",
     "socket.io": "^2.0.2",
     "socket.io-client": "^2.0.2",
-    "sqlite3": "^3.1.1",
+    "sqlite3": "^4.0.0",
     "vision": "^4.0.1",
-    "snyk": "^1.41.1"
+    "snyk": "^1.83.0"
   },
   "snyk": true
 }
