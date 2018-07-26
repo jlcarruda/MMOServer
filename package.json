@@ -18,7 +18,7 @@
     "common-errors": "^0.5.3",
     "config": "^1.17.1",
     "glob": "^6.0.1",
-    "hapi": "^11.1.1",
+    "hapi": "^17.0.0",
     "hapi-swagger": "^3.0.0-rc1",
     "inert": "^3.2.0",
     "lodash": "^3.10.1",
@@ -28,7 +28,7 @@
     "sequelize": "^3.14.1",
     "socket.io": "^2.0.2",
     "socket.io-client": "^2.0.2",
-    "sqlite3": "^3.1.1",
+    "sqlite3": "^4.0.0",
     "vision": "^4.0.1",
     "snyk": "^1.41.1"
   },
