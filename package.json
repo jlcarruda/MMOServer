@@ -22,7 +22,7 @@
     "hapi-swagger": "^3.0.0-rc1",
     "inert": "^3.2.0",
     "lodash": "^4.17.19",
-    "mongoose": "^4.3.4",
+    "mongoose": "^5.12.3",
     "mysql": "^2.10.0",
     "phaser": "^2.4.4",
     "sequelize": "^5.21.2",
